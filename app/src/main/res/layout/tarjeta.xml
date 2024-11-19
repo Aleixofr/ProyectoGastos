@@ -3,57 +3,87 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="?attr/colorSurface"
+    android:padding="8dp">
 
+    <!-- Contenedor Principal -->
     <LinearLayout
-        android:layout_width="412dp"
-        android:layout_height="77dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/background_card"
+        android:clipToPadding="false"
+        android:elevation="4dp"
         android:orientation="horizontal"
-        android:padding="2dp"
+        android:padding="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="2dp">
+        app:layout_constraintTop_toTopOf="parent">
 
+        <!-- Imagen -->
         <ImageView
             android:id="@+id/imagenLista"
-            android:layout_width="83dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0"
-            android:scaleType="fitCenter"
-            tools:srcCompat="@drawable/ocio" />
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginEnd="8dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/ocio" />
 
+        <!-- Contenedor de texto -->
         <LinearLayout
-            android:layout_width="242dp"
-            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
             android:orientation="vertical">
 
+            <!-- Categoría -->
             <TextView
                 android:id="@+id/CategoriaLista"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:text="Categoría" />
+                android:fontFamily="@font/asap_condensed_medium"
+                android:text="Categoría"
+                android:textColor="?attr/colorPrimary"
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
+            <!-- Título -->
             <TextView
                 android:id="@+id/TituloLista"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:text="Titulo" />
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Título"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
+            <!-- Descripción -->
             <TextView
                 android:id="@+id/DescripcionLista"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Descripción" />
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="Descripción breve sobre este elemento. Esto se corta si es demasiado largo."
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:textSize="12sp" />
         </LinearLayout>
 
-        <Button
+        <!-- Botón -->
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/BtnAddLista"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="0"
-            android:text="+" />
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:backgroundTint="?attr/colorPrimary"
+            app:cornerRadius="24dp"
+            app:icon="@android:drawable/ic_menu_compass"
+            app:iconPadding="0dp"
+            app:iconTint="?attr/colorOnPrimary" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
