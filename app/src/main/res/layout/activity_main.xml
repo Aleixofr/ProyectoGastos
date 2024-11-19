@@ -13,23 +13,43 @@
         android:layout_height="207dp"
         android:alpha="0.5"
         android:scaleType="centerCrop"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/backgroundimg" />
+        app:srcCompat="@drawable/backgroundimg"
+        tools:srcCompat="@drawable/backgroundimg"
+        tools:visibility="visible" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_gastos"
         android:layout_width="407dp"
         android:layout_height="454dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="194dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="391dp"
         android:layout_height="47dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="10dp"
         android:text="Button"
-        tools:layout_editor_absoluteX="10dp"
-        tools:layout_editor_absoluteY="668dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rv_gastos" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="375dp"
+        android:layout_height="47dp"
+        android:text="MIS GASTOS"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.1"
+        tools:layout_editor_absoluteX="20dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
