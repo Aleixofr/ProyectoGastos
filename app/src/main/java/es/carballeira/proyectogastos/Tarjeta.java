@@ -7,6 +7,8 @@ public class Tarjeta {
     private String Descripcion;
     private int imagen; //Ruta de la imagen
     private CategoriaTarjeta categoria;
+    private double precio;
+    private int cantidad;
 
     public enum CategoriaTarjeta {
         OCIO,
@@ -17,11 +19,21 @@ public class Tarjeta {
         VIAJES
     }
 
-    public Tarjeta(String titulo, String descripcion, int imagen, CategoriaTarjeta categoria) {
+    public Tarjeta(String titulo, String descripcion, int imagen, CategoriaTarjeta categoria, double precio, int cantidad) {
         this.titulo = titulo;
         Descripcion = descripcion;
         this.imagen = imagen;
         this.categoria = categoria;
+        this.precio = precio;
+        this.cantidad = cantidad;
+    }
+
+    public Tarjeta(int cantidad, CategoriaTarjeta categoria, double precio, String descripcion, String titulo) {
+        this.cantidad = cantidad;
+        this.categoria = categoria;
+        this.precio = precio;
+        Descripcion = descripcion;
+        this.titulo = titulo;
     }
 
     public String getTitulo() {
@@ -56,6 +68,22 @@ public class Tarjeta {
         this.categoria = categoria;
     }
 
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
     @Override
     public String toString() {
         return "Tarjeta{" +
@@ -63,6 +91,8 @@ public class Tarjeta {
                 ", Descripcion='" + Descripcion + '\'' +
                 ", imagen=" + imagen +
                 ", categoria=" + categoria +
+                ", precio=" + precio +
+                ", cantidad=" + cantidad +
                 '}';
     }
 }
