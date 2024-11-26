@@ -11,7 +11,6 @@
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
         android:background="@drawable/fondo_ocio"
         android:clipToPadding="false"
         android:elevation="4dp"
@@ -27,9 +26,10 @@
 
         <ImageView
             android:id="@+id/imagenLista"
-            android:layout_width="62dp"
+            android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_marginEnd="8dp"
+            android:contentDescription="@string/imagenLista"
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/ocio" />
 
@@ -53,15 +53,16 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/asap_condensed_medium"
                     android:text="Categoría"
-                    android:textColor="?attr/colorPrimary"
+                    android:textColor="?attr/colorTertiary"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/PrecioLista"
+                    android:id="@+id/tv_precio"
                     android:layout_width="122dp"
                     android:layout_height="wrap_content"
-                    android:text="Precio: $0.00"
+                    android:text="Precio"
+                    android:textAlignment="textEnd"
                     android:textColor="?attr/colorSecondary"
                     android:textSize="14sp"
                     android:textStyle="bold" />
@@ -102,20 +103,20 @@
             android:paddingStart="8dp"
             android:paddingEnd="8dp">
 
-            <!-- Botón de disminuir -->
+            <!-- Botón de aumentar -->
             <ImageButton
-                android:id="@+id/BtnDecrementar"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
+                android:id="@+id/btn_aumentar"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:contentDescription="Disminuir cantidad"
                 android:scaleType="center"
                 android:src="@drawable/add"
-                android:tint="?attr/colorPrimary" />
+                android:tint="?attr/colorSurfaceInverse" />
 
             <!-- Cantidad -->
             <TextView
-                android:id="@+id/CantidadLista"
+                android:id="@+id/tv_cantidad"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -128,13 +129,13 @@
 
             <!-- Botón de aumentar -->
             <ImageButton
-                android:id="@+id/BtnIncrementar"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
+                android:id="@+id/btn_decrementar"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:contentDescription="Aumentar cantidad"
                 android:src="@drawable/remove"
-                android:tint="?attr/colorPrimary" />
+                android:tint="?attr/colorOnSurface" />
         </LinearLayout>
     </LinearLayout>
 
