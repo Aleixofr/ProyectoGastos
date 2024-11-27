@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        Log.i("INFO", "CREANDO DATOS LISTA");
+        Log.i("INFO", getString(R.string.creando_datos_lista));
         CargarDatos cargarDatos = new CargarDatos();
         ArrayList<Tarjeta> tarjetas = cargarDatos.cargarLista();
         Log.i("INFO", "LISTA CREADA CON " + tarjetas.size() + " ELEMENTOS");
@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         btn_calcular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Log.i("INFO", getString(R.string.se_ha_hecho_click_en_el_btn_de_calcular));
                 double totalGastos = 0.00;
 
                 for (Tarjeta tarjeta : tarjetas) {

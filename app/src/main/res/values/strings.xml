@@ -5,4 +5,6 @@
     <string name="btn_calcular">MOSTRAR TOTAL GASTOS</string>
     <string name="sw_cantidad">Mostrar solo los elementos con cantidad</string>
     <string name="imagenLista">Imagen de la lista</string>
+    <string name="creando_datos_lista">CREANDO DATOS LISTA</string>
+    <string name="se_ha_hecho_click_en_el_btn_de_calcular">Se ha hecho click en el btn de calcular</string>
 </resources>

@@ -9,6 +9,11 @@ public class CargarDatos {
 
     private ArrayList<Tarjeta> lista;
 
+    /**
+     * Funcion que carga los datos de cada tarjeta en un arrayList
+     *
+     * @return ArrayList<Tarjeta> lista - array con las tarjetas
+     */
     public ArrayList<Tarjeta> cargarLista() {
         Log.i("CARGA", "Se ha llamado al metodo cargarLista");
 
@@ -77,10 +82,6 @@ public class CargarDatos {
                 new Tarjeta("Crucero", "Viaje en crucero", R.drawable.viajes, Tarjeta.CategoriaTarjeta.VIAJES, 2500.0, 0),
                 new Tarjeta("Autocaravana", "Alquiler de autocaravana", R.drawable.viajes, Tarjeta.CategoriaTarjeta.VIAJES, 1500.0, 0)
         }));
-
-
-
-
 
         return lista;
     }
