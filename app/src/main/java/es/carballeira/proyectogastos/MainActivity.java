@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        //Se carga la lista de datos
         Log.i("INFO", getString(R.string.creando_datos_lista));
         CargarDatos cargarDatos = new CargarDatos();
         ArrayList<Tarjeta> tarjetas = cargarDatos.cargarLista();

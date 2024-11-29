@@ -7,7 +7,6 @@
     android:background="?attr/colorSurface"
     android:padding="8dp">
 
-    <!-- Contenedor Principal -->
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -19,10 +18,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
-        <!-- Imagen -->
-
-        <!-- Contenedor de texto -->
 
         <ImageView
             android:id="@+id/imagenLista"
@@ -39,8 +34,6 @@
             android:layout_weight="1"
             android:gravity="center_vertical"
             android:orientation="vertical">
-
-            <!-- Categoría -->
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -68,7 +61,6 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
-            <!-- Título -->
             <TextView
                 android:id="@+id/TituloLista"
                 android:layout_width="match_parent"
@@ -80,7 +72,6 @@
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
-            <!-- Descripción -->
             <TextView
                 android:id="@+id/DescripcionLista"
                 android:layout_width="match_parent"
@@ -91,10 +82,8 @@
                 android:textColor="?attr/colorOnSurfaceVariant"
                 android:textSize="12sp" />
 
-            <!-- Precio -->
         </LinearLayout>
 
-        <!-- Controles de cantidad -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -103,7 +92,6 @@
             android:paddingStart="8dp"
             android:paddingEnd="8dp">
 
-            <!-- Botón de aumentar -->
             <ImageButton
                 android:id="@+id/btn_aumentar"
                 android:layout_width="30dp"
@@ -114,7 +102,6 @@
                 android:src="@drawable/add"
                 android:tint="?attr/colorSurfaceInverse" />
 
-            <!-- Cantidad -->
             <TextView
                 android:id="@+id/tv_cantidad"
                 android:layout_width="wrap_content"
@@ -127,7 +114,6 @@
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
-            <!-- Botón de aumentar -->
             <ImageButton
                 android:id="@+id/btn_decrementar"
                 android:layout_width="30dp"

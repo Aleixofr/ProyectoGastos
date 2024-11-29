@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Proyecto gastos</string>
+    <string name="tv_titulo">Os Meus Gastos</string>
+    <string name="img_background">Imaxen de fondo</string>
+    <string name="btn_calcular">MOSTRAR O TOTAL DE GASTOS</string>
+    <string name="sw_cantidad">Mostrar solo os elementos con cantidade</string>
+    <string name="imagenLista">Imaxen da lista</string>
+    <string name="creando_datos_lista">CREANDO DATOS LISTA</string>
+    <string name="se_ha_hecho_click_en_el_btn_de_calcular">Fixose click no btn de calcular</string>
+</resources>

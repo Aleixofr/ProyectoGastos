@@ -2,6 +2,9 @@ package es.carballeira.proyectogastos;
 
 import android.widget.ImageView;
 
+/**
+ * Clase que define los atributos que tendran cada una de las tarjetas de la lista
+ */
 public class Tarjeta {
     private String titulo;
     private String Descripcion;
@@ -19,6 +22,7 @@ public class Tarjeta {
         VIAJES
     }
 
+    //Constructor base
     public Tarjeta(String titulo, String descripcion, int imagen, CategoriaTarjeta categoria, double precio, int cantidad) {
         this.titulo = titulo;
         Descripcion = descripcion;
@@ -28,14 +32,7 @@ public class Tarjeta {
         this.cantidad = cantidad;
     }
 
-    public Tarjeta(int cantidad, CategoriaTarjeta categoria, double precio, String descripcion, String titulo) {
-        this.cantidad = cantidad;
-        this.categoria = categoria;
-        this.precio = precio;
-        Descripcion = descripcion;
-        this.titulo = titulo;
-    }
-
+    //Getters y Setters
     public String getTitulo() {
         return titulo;
     }
@@ -83,6 +80,7 @@ public class Tarjeta {
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
+
 
     @Override
     public String toString() {
