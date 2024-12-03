@@ -7,4 +7,10 @@
     <string name="imagenLista">Imagen de la lista</string>
     <string name="creando_datos_lista">CREANDO DATOS LISTA</string>
     <string name="se_ha_hecho_click_en_el_btn_de_calcular">Se ha hecho click en el btn de calcular</string>
+    <string name="Gastos">Gastos\n</string>
+    <string name="tab_gastos">Gastos</string>
+    <string name="tab_proximamente" />
+    <string name="tab_varios">Varios</string>
+    <string name="opt_calcular">Calcular Total Gasto</string>
+    <string name="opt_add">Añadir</string>
 </resources>

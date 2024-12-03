@@ -60,26 +60,10 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_gastos"
         android:layout_width="match_parent"
-        android:layout_height="610dp"
+        android:layout_height="687dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/img_background" />
-
-    <Button
-        android:id="@+id/btn_calcular"
-        android:layout_width="393dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="10dp"
-        android:backgroundTint="@color/md_theme_inverseSurface_mediumContrast"
-        android:text="@string/btn_calcular"
-        app:layout_constraintBottom_toTopOf="@+id/tab_layout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rv_gastos"
-        app:layout_constraintVertical_bias="0.25" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout"
@@ -90,14 +74,29 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab_gastos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Gastos" />
+            android:text="@string/tab_gastos" />
 
         <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab_varios"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Varios" />
+            android:text="@string/tab_varios" />
     </com.google.android.material.tabs.TabLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/float_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="@+id/tab_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/rv_gastos"
+        app:layout_constraintTop_toBottomOf="@+id/img_background"
+        app:layout_constraintVertical_bias="0.914"
+        app:srcCompat="@android:drawable/ic_menu_info_details" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
