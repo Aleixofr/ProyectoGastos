@@ -1,5 +1,6 @@
 package es.carballeira.proyectogastos;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,9 +21,10 @@ import java.util.Arrays;
  */
 public class TarjetaAdapter  extends RecyclerView.Adapter<TarjetaAdapter.TarjetaViewHolder> {
 
-    ArrayList<Tarjeta> lista;
+    private ArrayList<Tarjeta> lista;
 
     public TarjetaAdapter(ArrayList<Tarjeta> lista) {
+
         this.lista = lista;
     }
 
@@ -60,23 +62,52 @@ public class TarjetaAdapter  extends RecyclerView.Adapter<TarjetaAdapter.Tarjeta
         holder.tv_cantidad.setText(String.valueOf(tarjeta.getCantidad()));
 
         //Evento de incrementar
-        holder.btn_incrementar.setOnClickListener(view -> {
-            tarjeta.setCantidad(tarjeta.getCantidad() + 1);
-
-            notifyItemChanged(position);
-        });
-
-        //Evento de decrementar
-        holder.btn_decrementar.setOnClickListener(view -> {
-
-            if(tarjeta.getCantidad() != 0) {
-
-                tarjeta.setCantidad(tarjeta.getCantidad() - 1);
+        if(holder.btn_incrementar != null) {
+            holder.btn_incrementar.setOnClickListener(view -> {
+                tarjeta.setCantidad(tarjeta.getCantidad() + 1);
 
                 notifyItemChanged(position);
-            }
+            });
+        }
 
-        });
+
+        //Evento de incrementar
+        if(holder.btn_incrementar_land != null) {
+            holder.btn_incrementar_land.setOnClickListener(view -> {
+                tarjeta.setCantidad(tarjeta.getCantidad() + 1);
+
+                notifyItemChanged(position);
+            });
+        }
+
+
+        //Evento de decrementar
+        if(holder.btn_decrementar != null) {
+            holder.btn_decrementar.setOnClickListener(view -> {
+
+                if(tarjeta.getCantidad() != 0) {
+
+                    tarjeta.setCantidad(tarjeta.getCantidad() - 1);
+
+                    notifyItemChanged(position);
+                }
+
+            });
+        }
+
+
+        if(holder.btn_quitar != null) {
+            holder.btn_quitar.setOnClickListener(view -> {
+                if(tarjeta.getCantidad() != 0) {
+
+                    tarjeta.setCantidad(tarjeta.getCantidad() - 1);
+
+                    notifyItemChanged(position);
+                }
+            });
+        }
+
+
     }
 
     /**
@@ -111,6 +142,7 @@ public class TarjetaAdapter  extends RecyclerView.Adapter<TarjetaAdapter.Tarjeta
         TextView tv_cantidad;
         ImageButton btn_incrementar;
         ImageButton btn_decrementar;
+        Button btn_incrementar_land, btn_quitar;
 
         /**
          * Constructor del ViewHolder.
@@ -127,6 +159,9 @@ public class TarjetaAdapter  extends RecyclerView.Adapter<TarjetaAdapter.Tarjeta
             this.tv_cantidad = itemView.findViewById(R.id.tv_cantidad);
             this.btn_incrementar = itemView.findViewById(R.id.btn_aumentar);
             this.btn_decrementar = itemView.findViewById(R.id.btn_decrementar);
+            this.btn_incrementar_land = itemView.findViewById(R.id.btn_aumentar_land);
+            this.btn_quitar = itemView.findViewById(R.id.btn_quitar);
+
         }
     }
 }
