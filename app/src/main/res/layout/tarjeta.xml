@@ -52,7 +52,7 @@
 
                 <TextView
                     android:id="@+id/tv_precio"
-                    android:layout_width="122dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Precio"
                     android:textAlignment="textEnd"
@@ -82,47 +82,44 @@
                 android:textColor="?attr/colorOnSurfaceVariant"
                 android:textSize="12sp" />
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp">
-
-            <ImageButton
-                android:id="@+id/btn_aumentar"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:contentDescription="Disminuir cantidad"
-                android:scaleType="center"
-                android:src="@drawable/add"
-                android:tint="?attr/colorSurfaceInverse" />
-
-            <TextView
-                android:id="@+id/tv_cantidad"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
                 android:gravity="center"
-                android:text="0"
-                android:textColor="?attr/colorOnSurface"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:orientation="horizontal"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp">
 
-            <ImageButton
-                android:id="@+id/btn_decrementar"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:contentDescription="Aumentar cantidad"
-                android:src="@drawable/remove"
-                android:tint="?attr/colorOnSurface" />
+                <Button
+                    android:id="@+id/btn_quitar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Quitar" />
+
+                <Button
+                    android:id="@+id/btn_aumentar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Añadir" />
+
+                <TextView
+                    android:id="@+id/tv_cantidad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
         </LinearLayout>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

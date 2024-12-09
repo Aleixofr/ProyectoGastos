@@ -69,18 +69,6 @@ public class TarjetaAdapter  extends RecyclerView.Adapter<TarjetaAdapter.Tarjeta
                 notifyItemChanged(position);
             });
         }
-
-
-        //Evento de incrementar
-        if(holder.btn_incrementar_land != null) {
-            holder.btn_incrementar_land.setOnClickListener(view -> {
-                tarjeta.setCantidad(tarjeta.getCantidad() + 1);
-
-                notifyItemChanged(position);
-            });
-        }
-
-
         //Evento de decrementar
         if(holder.btn_decrementar != null) {
             holder.btn_decrementar.setOnClickListener(view -> {
@@ -94,20 +82,6 @@ public class TarjetaAdapter  extends RecyclerView.Adapter<TarjetaAdapter.Tarjeta
 
             });
         }
-
-
-        if(holder.btn_quitar != null) {
-            holder.btn_quitar.setOnClickListener(view -> {
-                if(tarjeta.getCantidad() != 0) {
-
-                    tarjeta.setCantidad(tarjeta.getCantidad() - 1);
-
-                    notifyItemChanged(position);
-                }
-            });
-        }
-
-
     }
 
     /**
@@ -140,9 +114,8 @@ public class TarjetaAdapter  extends RecyclerView.Adapter<TarjetaAdapter.Tarjeta
         TextView tv_descripcion;
         TextView tv_precio;
         TextView tv_cantidad;
-        ImageButton btn_incrementar;
-        ImageButton btn_decrementar;
-        Button btn_incrementar_land, btn_quitar;
+        Button btn_incrementar;
+        Button btn_decrementar;
 
         /**
          * Constructor del ViewHolder.
@@ -158,9 +131,7 @@ public class TarjetaAdapter  extends RecyclerView.Adapter<TarjetaAdapter.Tarjeta
             this.tv_precio = itemView.findViewById(R.id.tv_precio);
             this.tv_cantidad = itemView.findViewById(R.id.tv_cantidad);
             this.btn_incrementar = itemView.findViewById(R.id.btn_aumentar);
-            this.btn_decrementar = itemView.findViewById(R.id.btn_decrementar);
-            this.btn_incrementar_land = itemView.findViewById(R.id.btn_aumentar_land);
-            this.btn_quitar = itemView.findViewById(R.id.btn_quitar);
+            this.btn_decrementar = itemView.findViewById(R.id.btn_quitar);
 
         }
     }
