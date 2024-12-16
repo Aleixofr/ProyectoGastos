@@ -57,13 +57,17 @@
 
     </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_gastos"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:name="es.carballeira.proyectogastos.GastosFragment"
         android:layout_width="match_parent"
-        android:layout_height="687dp"
+        android:layout_height="685dp"
+        app:layout_constraintBottom_toTopOf="@+id/tab_layout"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_background" />
+        app:layout_constraintTop_toBottomOf="@+id/img_background"
+        app:layout_constraintVertical_bias="0.0" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout"
@@ -85,18 +89,5 @@
             android:layout_height="wrap_content"
             android:text="@string/tab_varios" />
     </com.google.android.material.tabs.TabLayout>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/float_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        app:layout_constraintBottom_toBottomOf="@+id/tab_layout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="@+id/rv_gastos"
-        app:layout_constraintTop_toBottomOf="@+id/img_background"
-        app:layout_constraintVertical_bias="0.908"
-        app:srcCompat="@android:drawable/ic_menu_info_details" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

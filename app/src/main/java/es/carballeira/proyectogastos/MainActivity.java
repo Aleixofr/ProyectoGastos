@@ -43,38 +43,23 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        //Se carga la lista de datos
-        Log.i("INFO", getString(R.string.creando_datos_lista));
-        CargarDatos cargarDatos = new CargarDatos();
-        tarjetas = cargarDatos.cargarLista();
-        Log.i("INFO", "LISTA CREADA CON " + tarjetas.size() + " ELEMENTOS");
-
-        //Crea el adaptador
-        TarjetaAdapter tarjetaAdapter = new TarjetaAdapter(tarjetas);
-
-        RecyclerView rvGastos = findViewById(R.id.rv_gastos);
-
-        rvGastos.setLayoutManager(new LinearLayoutManager(this));
-
-        rvGastos.setAdapter(tarjetaAdapter);
-
-        //Switch para filtrar solo los elementos con cantidad
-        Switch sw_cantidad = findViewById(R.id.sw_cantidad);
-        sw_cantidad.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            if (isChecked) {
-                // Filtrar tarjetas con cantidad > 0
-                ArrayList<Tarjeta> filtro = new ArrayList<>();
-                for (Tarjeta tarjeta : tarjetas) {
-                    if (tarjeta.getCantidad() > 0) {
-                        filtro.add(tarjeta);
-                    }
-                }
-                tarjetaAdapter.setListaTarjetas(filtro);
-            } else {
-                // Mostrar todas las tarjetas
-                tarjetaAdapter.setListaTarjetas(tarjetas);
-            }
-        });
+//        //Switch para filtrar solo los elementos con cantidad
+//        Switch sw_cantidad = findViewById(R.id.sw_cantidad);
+//        sw_cantidad.setOnCheckedChangeListener((buttonView, isChecked) -> {
+//            if (isChecked) {
+//                // Filtrar tarjetas con cantidad > 0
+//                ArrayList<Tarjeta> filtro = new ArrayList<>();
+//                for (Tarjeta tarjeta : tarjetas) {
+//                    if (tarjeta.getCantidad() > 0) {
+//                        filtro.add(tarjeta);
+//                    }
+//                }
+//                tarjetaAdapter.setListaTarjetas(filtro);
+//            } else {
+//                // Mostrar todas las tarjetas
+//                tarjetaAdapter.setListaTarjetas(tarjetas);
+//            }
+//        });
 
         //TabLaoyout
         TabLayout tabLayout = findViewById(R.id.tab_layout);
@@ -83,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 if(tab.getPosition() == 1) {
-                    CrearSnackBar("Proximamente");
                 }
             }
 
@@ -98,57 +82,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //FloatButton
-        FloatingActionButton float_btn = findViewById(R.id.float_btn);
-        float_btn.setOnClickListener(new View.OnClickListener(){
-
-            @Override
-            public void onClick(View view) {
-                ShowPopUpMenu(view);
-            }
-        });
-
-    }
-
-    private void CrearSnackBar(String mensaje) {
-        Snackbar snackbar = Snackbar.make(findViewById(R.id.main), mensaje, Snackbar.LENGTH_LONG);
-        snackbar.setAction("Deshacer", new View.OnClickListener(){
-
-            @Override
-            public void onClick(View view) {
-                Log.i("INFO", "Accion deshecha");
-            }
-        });
-        snackbar.show();
-    }
-
-    public void ShowPopUpMenu(View view) {
-        PopupMenu popupMenu = new PopupMenu(this, view);
-        MenuInflater menuInflater = popupMenu.getMenuInflater();
-        menuInflater.inflate(R.menu.acciones, popupMenu.getMenu());
-
-        //Manejando Clicks
-        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem menuItem) {
-                TextView tv;
-                if (menuItem.getItemId() == R.id.opt_add) {
-                    CrearSnackBar("Proximamente");
-                }
-                if (menuItem.getItemId() == R.id.opt_calcular) {
-                    Log.i("INFO", getString(R.string.se_ha_hecho_click_en_el_btn_de_calcular));
-                    double totalGastos = 0.00;
-
-                    for (Tarjeta tarjeta : tarjetas) {
-                        totalGastos += tarjeta.getCantidad() * tarjeta.getPrecio();
-                    }
-                    String mensaje = "Gasto Total: " + String.format("%.2f", totalGastos) + "€";
-                    CrearSnackBar(mensaje);
-                }
-
-                return true;
-            }
-        });
-        popupMenu.show();
+        // Agregar el Fragment dinámicamente
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragmentContainerView, new GastosFragment())
+                .commit();
     }
 }
