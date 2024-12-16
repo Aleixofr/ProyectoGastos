@@ -18,9 +18,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
@@ -43,61 +45,28 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-//        //Switch para filtrar solo los elementos con cantidad
-//        Switch sw_cantidad = findViewById(R.id.sw_cantidad);
-//        sw_cantidad.setOnCheckedChangeListener((buttonView, isChecked) -> {
-//            if (isChecked) {
-//                // Filtrar tarjetas con cantidad > 0
-//                ArrayList<Tarjeta> filtro = new ArrayList<>();
-//                for (Tarjeta tarjeta : tarjetas) {
-//                    if (tarjeta.getCantidad() > 0) {
-//                        filtro.add(tarjeta);
-//                    }
-//                }
-//                tarjetaAdapter.setListaTarjetas(filtro);
-//            } else {
-//                // Mostrar todas las tarjetas
-//                tarjetaAdapter.setListaTarjetas(tarjetas);
-//            }
-//        });
+        BottomNavigationView barra_navegacion = findViewById(R.id.barra_navegacion);
 
-        //TabLaoyout
-        TabLayout tabLayout = findViewById(R.id.tab_layout);
+        // Carga el fragmento principal
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView, new GastosFragment()).commit();
 
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                if(tab.getPosition() == 0) {
-                    // Agregar el Fragment dinámicamente
-                    getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.fragmentContainerView, new GastosFragment())
-                            .commit();
-                    return;
-                }
+        // Handle BottomNavigationView item clicks
+        barra_navegacion.setOnItemSelectedListener(item -> {
+            Fragment selectedFragment = null;
 
-                if (tab.getPosition() == 1) {
-                    // Agregar el Fragment dinámicamente
-                    getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.fragmentContainerView, new CategoriasFragment())
-                            .commit();
-                    return;
-                }
+            if (item.getItemId() == R.id.gastos) {
+                selectedFragment = new GastosFragment();
             }
 
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
+            if (item.getItemId() == R.id.varios) {
+                selectedFragment = new CategoriasFragment();
             }
 
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
+            if (selectedFragment != null) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView, selectedFragment).commit();
             }
+            return true;
+
         });
-
-        // Agregar el Fragment dinámicamente
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fragmentContainerView, new GastosFragment())
-                .commit();
     }
 }
