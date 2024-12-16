@@ -62,32 +62,17 @@
         android:name="es.carballeira.proyectogastos.GastosFragment"
         android:layout_width="match_parent"
         android:layout_height="685dp"
-        app:layout_constraintBottom_toTopOf="@+id/tab_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_background"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/img_background" />
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tab_layout"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="61dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/tab_gastos"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/tab_gastos" />
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/tab_varios"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/tab_varios" />
-    </com.google.android.material.tabs.TabLayout>
+        app:layout_constraintEnd_toStartOf="@+id/fragmentContainerView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/navegacion" />/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
