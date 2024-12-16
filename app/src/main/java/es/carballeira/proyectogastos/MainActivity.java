@@ -67,7 +67,20 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                if(tab.getPosition() == 1) {
+                if(tab.getPosition() == 0) {
+                    // Agregar el Fragment dinámicamente
+                    getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.fragmentContainerView, new GastosFragment())
+                            .commit();
+                    return;
+                }
+
+                if (tab.getPosition() == 1) {
+                    // Agregar el Fragment dinámicamente
+                    getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.fragmentContainerView, new CategoriasFragment())
+                            .commit();
+                    return;
                 }
             }
 
